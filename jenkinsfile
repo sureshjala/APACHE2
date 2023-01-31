@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git branch:'main'url:''
+              git branch:'master',url:'https://github.com/sureshjala/APACHE2.git'
             }
         }
         stage('ansible playbook excution') {
