@@ -1,0 +1,15 @@
+pipeline {
+    agent { label 'DEPLOYMENT' }
+    stages {
+        stage('git clone') {
+            steps {
+                git branch:'main'url:''
+            }
+        }
+        stage('ansible playbook excution') {
+            steps {
+                sh "ansible palybook -i hosts apache.yaml"
+            }
+        }
+    }
+}
